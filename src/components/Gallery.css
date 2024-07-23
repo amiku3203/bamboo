@@ -1,0 +1,137 @@
+/* Basic styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.gallery-container { padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Center items with equal space between them */
+    gap: 20px; /* Adjust gap between gallery items */
+    margin-top: 70px;
+}
+
+.gallery-item {
+    flex: 0 1 calc(33.33% - 20px); /* Three items per row, considering gap */
+    max-width: calc(33.33% - 20px); /* Limit width of each item */
+    position: relative; /* Relative positioning for hover overlay */
+    overflow: hidden; /* Hide overflow to contain overlay within item */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensure images fill their container */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Scale up image on hover */
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    top: -100%; /* Initially above the item */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(13, 11, 11, 0.5); /* Semi-transparent overlay */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially invisible */
+    transition: top 0.2s ease, opacity 0.3s ease; /* Smooth transition for top and opacity */
+    cursor: pointer;
+}
+
+.gallery-item:hover .overlay {
+    top: 0; /* Move overlay down to cover the image on hover */
+    opacity: 1; /* Show overlay on hover */
+}
+
+.overlay-icon {
+    font-size: 36px;
+}
+
+/* Modal styling */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .gallery-item {
+        flex: 0 1 calc(50% - 20px); /* Two items per row on tablets */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 0 1 calc(100% - 20px); /* One item per row on mobile */
+        max-width: calc(100% - 20px);
+    }
+}
