@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaFacebook, FaInstagram, FaPinterest } from 'react-icons/fa';
 import { FiPhoneCall, FiMail, FiMenu, FiX } from 'react-icons/fi';
 import { Link } from 'react-scroll';
-import logo from "../assets/logo"
+import logo from "../assets/logo.jpeg"
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
