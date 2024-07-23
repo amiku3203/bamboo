@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaFacebook, FaInstagram, FaPinterest } from 'react-icons/fa';
 import { FiPhoneCall, FiMail, FiMenu, FiX } from 'react-icons/fi';
 import { Link } from 'react-scroll';
-
+import logo from "../assets/logo"
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -75,7 +75,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <img src="https://www.hotamchickmaker.com/header_files/6966WhatsApp%20Image%202023-03-28%20at%2012.43.51%20PM.jpeg" alt="Bamboo Chick Maker Logo" className="h-16" />
+            <img src={logo} alt="Bamboo Chick Maker Logo" className="h-16" />
 
             {/* Navigation links for larger screens */}
             <ul className="hidden md:flex space-x-6 text-white">
